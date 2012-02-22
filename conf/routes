@@ -4,7 +4,7 @@
 
 # Home page
 GET     /                                       Application.index
-GET		/dashboard								Application.dashboard
+GET		/dashboard								Users.dashboard
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

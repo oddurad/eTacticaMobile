@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<style>
+		#navbar{position:relative}
+		#btm-left{float:left; position: relative; margin-left:1%; font-size:16px;}
+		#btm-right{float:right; position: relative; margin-right:30px; font-size:16px;}
+		#midText{text-align:center; position:relative;font-size:40px}
+		#pic{position:relative;}
+		<!--#locations{min-width:100px;width:90%;} -->
+	</style>
+	<title>eTactica Mobile</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+<body> 
+<div  data-role="page"> 
+	<div data-role="header">
+		<h1>${session.user} :: Dashboard</h1>
+		<a href="index.html" data-icon="minus" class="ui-btn-right">Logout</a>
+		
+<!--		<a href="/" class="ui-btn-right">Cancel</a>  -->
+	</div>
+	<!-- /header -->
+<div id="midText"><b>Today: 43920$</b></div><br>
+<div class="podbar"> 
+			<div id="btm-left">Yesterday: 90384$</div>
+			<div id="btm-right">Predicted: 84537$</div><br>
+</div>
+<div data-role="collapsible-set" data-theme="a" id="locations">
+	<div data-role="collapsible" data-theme="a">
+		<h3>Location 1</h3>
+		<div data-role="collapsible">
+			<h3>Cabinet 1</h3>
+			<div data-role="collapsible">
+				<h3>Branch 1</h3>
+			</div>
+		</div>
+	</div>
+	<div data-role="collapsible">
+		<h3>Location 2</h3>
+	</div>
+	<div data-role="collapsible">
+		<h3>Location 3</h3>
+	</div>
+	<div data-role="collapsible">
+		<h3>Location 4</h3>
+	</div>
+	<div data-role="collapsible">
+		<h3>Location 5</h3>
+	</div>
+	<div data-role="collapsible">
+		<h3>Location 6</h3>
+	</div>
+	<div data-role="collapsible">
+		<h3>Location 7</h3>
+	</div>
+	<div data-role="collapsible">
+		<h3>Location 8</h3>
+	</div>
+	<div data-role="collapsible">
+		<h3>Location 9</h3>
+	</div>
+	<div data-role="collapsible">
+		<h3>Location 10</h3>
+	</div>
+</div>
+<div id="footer" data-role="footer" data-position="fixed">		
+	<div id="navbar" data-role="navbar">
+		<ul>
+			<li><a href="#" data-icon="home">Home</a></li>
+			<li><a href="#" data-icon="alert">Alert Inbox</a></li>
+			<li><a href="#" data-icon="gear">Alert Subscription</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
+</div><!-- /page -->
+</div>
+
+</body>
+</html>

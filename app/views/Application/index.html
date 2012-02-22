@@ -1,4 +1,45 @@
+<!DOCTYPE HTML>
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'Login' /}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="@{'/public/stylesheets/main.css'}" rel="stylesheet" type="text/css" media="screen"/>
+    <title>eTacticaMobile.login</title>
+</head>
 
-#{welcome /}
+<body>
+
+
+<div id="content">
+    <section id="logoContainer"><a href="@{Application.index()}">
+        <img id="logo" title="logo image" src="@{'/public/images/logo.png'}"/></a>
+    </section>
+
+
+    <section class="column" id="login">
+
+        <!--Form input data is authenticated my the loginUser() method-->
+        <!--Error handling if authentication fails-->
+        <form action="@{Users.login()}" method="GET" name="login">
+            #{ifErrors}
+            <p class="error">Username or password incorrect!</p>
+            </br>
+            #{/ifErrors}
+            <label>Username</label>
+            <input name="username" type="text" maxlength="128"  value="${flash.username}">
+            <label class="errorInput">#{error 'username' /}</label>
+
+            <label>Password</label>
+            <input name="password" type="password" maxlength="128" value="${flash.password}">
+            <label class="errorInput">#{error 'password' /}</label>
+
+            <input class="button" id="btnLogin" name="btnLogin" type="submit" value="Log in">
+        </form>
+    </section>
+
+
+    <section id="footer"></section>
+</div>
+</body>
+</html>
