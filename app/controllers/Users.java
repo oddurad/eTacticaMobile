@@ -40,7 +40,7 @@ public class Users extends Controller {
         }
          
         
-        Scope.Session.current().put("user", user.getUsername());
+       Scope.Session.current().put("user", user.getUsername());
 
         dashboard(user.getUsername());
     }
