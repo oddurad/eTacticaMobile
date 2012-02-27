@@ -1,14 +1,14 @@
 package controllers;
 
 import model.general.User;
-import model.service.UserService;
+import model.service.MockUserService;
 import play.data.validation.Validation;
 import play.mvc.Controller;
 import play.mvc.Scope;
 
 public class Users extends Controller {
 	
-    public static void dashboard(String username) {
+    public static void dashboard() {
         render();
     }
     
@@ -29,7 +29,7 @@ public class Users extends Controller {
         }
 
         //todo: write a final version of this
-        UserService userService = new UserService();
+        MockUserService userService = new MockUserService();
         User user = userService.login(username, password);
         
         if (user == null) {
@@ -41,8 +41,7 @@ public class Users extends Controller {
          
         
         Scope.Session.current().put("user", user.getUsername());
-
-        dashboard(user.getUsername());
+        dashboard();
     }
 
     
