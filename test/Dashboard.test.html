@@ -1,0 +1,14 @@
+*{ You can use plain selenium command using the selenium tag }*
+
+#{selenium}
+    // Open the home page, and check that no error occured
+    open('/dashboard')
+    assertNotTitle('Application error')
+    verifyTitle('eTactica Mobile - Dashboard')
+    verifyElementPresent('collap')
+    verifyElementPresent('navbar')
+    verifyElementPresent('footer')
+    assertTextPresent('Location 1')
+    assertTextPresent('Location 2')
+    assertTextPresent('Cabinet 1') 
+#{/selenium}
