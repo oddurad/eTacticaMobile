@@ -3,12 +3,19 @@
 #{selenium}
     // Open the home page, and check that no error occured
     open('/dashboard')
-    assertNotTitle('Application error')
-    verifyTitle('eTactica Mobile - Dashboard')
+    assertNotTitle('Application error')	//If page loads
+    verifyTitle('eTactica Mobile - Dashboard') //If title is correct
     verifyElementPresent('collap')
     verifyElementPresent('navbar')
-    verifyElementPresent('footer')
-    assertTextPresent('Location 1')
-    assertTextPresent('Location 2')
-    assertTextPresent('Cabinet 1') 
+    verifyElementPresent('footer')    
+    assertTextPresent('Home')
+    assertTextPresent('Alert Inbox')
+    assertTextPresent('Alert Subscription') 
+    assertTextPresent('Logout')
+    clickAndWait('link=Logout')
+    assertNotTitle('eTactica Mobile - Dashboard')
+    assertTextPresent('Username')
+    assertTextPresent('Password')
+   	open('/dashboard')
+   	
 #{/selenium}

@@ -10,7 +10,6 @@
 		<a href="@{Application.index()}" data-icon="minus" class="ui-btn-right" data-ajax="false">Logout</a>
 <!--		<a href="/" class="ui-btn-right">Cancel</a>  -->
 	</div>
-	<!-- /header -->
 <div id="collap">
 	<div data-role="collapsible-set">
 	    <div data-bind="foreach: locations">
@@ -20,7 +19,8 @@
 	         		<div data-bind="foreach: cab">
 	         			<div data-role="collapsible">
 	         				<h3><span data-bind="text: cabinetName"></span></h3>
-	         			</div>
+	         				<p>The price for this particular cabinet is: <span data-bind="text: price"></span>$</p>
+	         			</div>	
 	         		</div>
 	        </div>
 	    </div>	    		   		                                                                                       
@@ -29,7 +29,7 @@
 <div id="footer" data-role="footer" data-position="fixed">		
 	<div id="navbar" data-role="navbar">
 		<ul>
-			<li><a href="#" data-icon="home" class="ui-btn-active">Home</a></li>
+			<li><a href="@{Users.dashboard()}" data-icon="home" class="ui-btn-active">Home</a></li>
 			<li><a href="#" data-icon="alert">Alert Inbox</a></li>
 			<li><a href="#" data-icon="gear">Alert Subscription</a></li>
 		</ul>
@@ -38,4 +38,26 @@
 </div><!-- /page -->
 </div>
 	<script src="public/javascripts/test.js" type="text/javascript"></script>
+	<script>
+		var width = document.documentElement.clientWidth;
+		var height = document.documentElement.clientHeight;
+		var innerWidth = window.innerWidth;
+		var innerHeight = window.innerHeight;
+		var offWidth = document.documentElement.offsetWidth
+		var offHeight = document.documentElement.offsetHeight
+		$(document).ready(function (){
+			$("#collap").append(width);
+			$("#collap").append(" ");
+			$("#collap").append(height);
+			$("#collap").append(" ");
+			$("#collap").append(innerWidth);
+			$("#collap").append(" ");
+			$("#collap").append(innerHeight);
+			$("#collap").append(" ");
+			$("#collap").append(offWidth);
+			$("#collap").append(" ");
+			$("#collap").append(offHeight);
+		});
+			
+	</script>
 </body>
