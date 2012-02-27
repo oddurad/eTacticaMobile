@@ -16,13 +16,10 @@
 
 
     <section class="column" id="login">
-
-        <!--Form input data is authenticated my the loginUser() method-->
-        <!--Error handling if authentication fails-->
-        <form action="@{Users.login()}" method="GET" name="login">
+        <form action="@{Users.login()}" method="GET" name="login" data-ajax="false">
             #{ifErrors}
             <p class="error">Username or password incorrect!</p>
-            </br>
+            <br/>
             #{/ifErrors}
             <label>Username</label>
             <input name="username" type="text" maxlength="128"  value="${flash.username}">

@@ -7,7 +7,7 @@
 <div  data-role="page"> 
 	<div data-role="header">
 		<h1>${session.user} :: Dashboard</h1>
-		<a href="@{Application.index()}" data-icon="minus" class="ui-btn-right">Logout</a>
+		<a href="@{Application.index()}" data-icon="minus" class="ui-btn-right" data-ajax="false">Logout</a>
 <!--		<a href="/" class="ui-btn-right">Cancel</a>  -->
 	</div>
 	<!-- /header -->
@@ -18,9 +18,9 @@
 	        	<h3 data-bind="text: name"></h3>
 	        	<p>Cost for <span data-bind="text: name"></span> is <span data-bind="text: cost"></span>$</p>
 	         		<div data-bind="foreach: cab">
-	         			<div data-role="collapsible">	
+	         			<div data-role="collapsible">
 	         				<h3><span data-bind="text: cabinetName"></span></h3>
-	         			</div>	
+	         			</div>
 	         		</div>
 	        </div>
 	    </div>	    		   		                                                                                       

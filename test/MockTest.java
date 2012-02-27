@@ -19,10 +19,8 @@ public class MockTest extends FunctionalTest {
         User valid_user = service.login(valid_username, password);
         User invalid_user = service.login(invalid_username, password);
         
-        assertNotNull(valid_user); //should return an object witch is not null
+        assertNotNull(valid_user); //should return an object which is not null
         assertNull(invalid_user); //should return a null object
-        assertEquals(valid_username, valid_user.getUsername());        
-
+        assertEquals(valid_username, valid_user.getUsername());
     }
-
 }
