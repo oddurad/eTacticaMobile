@@ -1,5 +1,43 @@
 #{selenium}
-    open('/')
+	// Test the login page and that error display is working correctly
+	
+	// Test that the login page loads correctly
+	open('/')
     assertNotTitle('Application error')
+    assertTextPresent('Username')
+    assertTextPresent('Password')
     
+    open('/dashboard')
+    assertTitle('eTactica Mobile - Dashboard')
+   
+    // Type in an invalid username
+    open('/')
+    type('username', doddi)
+    clickAndWait(btnLogin)
+    assertTextPresent('Username or password incorrect!')
+    assertTextPresent('Please fill in a password')
+    assertTextNotPresent('Please fill in a username')    
+    
+    // Type in only a password
+    open('/')
+    type('password', password)
+    clickAndWait(btnLogin)
+    assertTextPresent('Username or password incorrect!')
+    assertTextPresent('Please fill in a username')
+    assertTextNotPresent('Please fill in a password')
+    
+    // Type in a valid username
+    open('/')
+    type('username', oddur09)
+    clickAndWait(btnLogin)
+    assertTextPresent('Username or password incorrect!')
+    assertTextPresent('Please fill in a password')
+    assertTextNotPresent('Please fill in a username')
+    
+    // Type in a valid username and password
+    open('/')
+    type('username', oddur09)
+    type('password', password)
+    clickAndWait(btnLogin)
+    assertTitle('eTactica Mobile - Dashboard')  
 #{/selenium}
