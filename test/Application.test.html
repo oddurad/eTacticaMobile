@@ -6,10 +6,7 @@
     assertNotTitle('Application error')
     assertTextPresent('Username')
     assertTextPresent('Password')
-    
-    open('/dashboard')
-    assertTitle('eTactica Mobile - Dashboard')
-   
+   	
     // Type in an invalid username
     open('/')
     type('username', doddi)
