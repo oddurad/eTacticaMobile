@@ -1,10 +1,16 @@
 *{ You can use plain selenium command using the selenium tag }*
 
 #{selenium}
+
     // Open the home page, and check that no error occured
-    open('/dashboard')
-    assertNotTitle('Application error')	//If page loads
-    verifyTitle('eTactica Mobile - Dashboard') //If title is correct
+    open('/')
+    assertNotTitle('Application error')
+    type('username', oddur09)
+    type('password', runarcool1723)
+    clickAndWait(btnLogin)
+    
+    //Check for many elements in the Dashboard
+    verifyTitle('eTactica Mobile - Dashboard')
     verifyElementPresent('collap')
     verifyElementPresent('navbar')
     verifyElementPresent('footer')    

@@ -9,6 +9,9 @@ import play.mvc.Scope;
 public class Users extends Controller {
 
 	public static void dashboard() {
+		if(!session.current().contains("user"))
+			Application.index();
+		
 		render();
 	}
 
