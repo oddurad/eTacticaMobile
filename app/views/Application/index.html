@@ -19,15 +19,14 @@
         <form action="@{Users.login()}" method="GET" name="login" data-ajax="false">
             #{ifErrors}
             <p class="error">Username or password incorrect!</p>
-            <br/>
             #{/ifErrors}
             <label>Username</label>
             <input name="username" type="text" maxlength="128"  value="${flash.username}">
-            <label class="errorInput">#{error 'username' /}</label>
+            <p class="errorInput">#{error 'username' /}</p>
 
             <label>Password</label>
             <input name="password" type="password" maxlength="128" value="${flash.password}">
-            <label class="errorInput">#{error 'password' /}</label>
+            <p class="errorInput">#{error 'password' /}</p>
 
             <input class="button" id="btnLogin" name="btnLogin" type="submit" value="Log in">
         </form>

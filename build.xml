@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="eTacticaMobile">
+    <property environment="env"/>
+    <property name="play.path" value="${env.PLAY_PATH}"/>
+    <import file="${play.path}/resources/application-build.xml"/>
+	
+	<!-- Global Properties=========================================== -->
+	<property name="src.dir" value="."/>
+	<property name="output.dir" value="${src.dir}/build"/>
+	<property name="test.dir" value="${src.dir}/test-result"/>
+	<property name="logs.dir" value="${src.dir}/logs"/>
+	<property name="zip.file" value="_eTacticaMobile.zip"/>
+	       
+	<!-- Get current date ================================= -->	
+	<target name="test.all" description="Run auto-tests in ant">
+	    <exec executable="${play.path}/play.bat">
+	        <arg line="auto-test"/>
+	    </exec>
+	</target>
+	
+	<!-- Get current date ================================= -->	
+	<target name="time.stamp" depends="test.all" description="Prefix for zip file">
+		<tstamp>
+			<format property="current.day" pattern="ddMMyyyy" />
+		</tstamp>
+	</target>
+	
+	<!-- Deploy the current build ================================= -->	
+	<target name="build"  depends="time.stamp" description="Source zip">
+		<zip destfile="${output.dir}/build_${current.day}_${zip.file}"
+	    	basedir="${src.dir}"
+	        excludes="db/**, eclipse/**, log/**, logs/**, precompiled/**,
+	        	           .settings/**, tmp/**, **/server.pid, **/*.jar"/>
+	</target>
+	
+	<!-- Delete test files========================================== -->
+	<target name="clean-test" description="Delete all test generated files">
+	    <delete dir="${test.dir}"/>
+	    <delete dir="${logs.dir}"/>
+	</target>
+	
+	<!-- Delete all generated files========================================== -->
+	<target name="clean-all" description="Delete all generated files">
+	    <delete dir="${test.dir}"/>
+	    <delete dir="${logs.dir}"/>
+	    <delete dir="${output.dir}"/>
+	</target>
+	
+</project>
